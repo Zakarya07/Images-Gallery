@@ -1,0 +1,139 @@
+@import "font";
+$primary_color:#f1e2bf;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Elegant";
+}
+
+section.main_container {
+    display: flex;
+    height: 100vh;
+
+    div.room_description {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $primary_color;
+
+        h1 {
+            font-size: 3.75em;
+        }
+
+        p {
+            font-size: 1.75em;
+            text-transform: capitalize;
+        }
+    }
+
+    div.room_gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+
+        .gallery_highlight {
+            width: 80%;
+            height: 50%;
+        }
+
+        div.pictures_preview {
+            display: flex;
+            justify-content: space-between;
+            border: 5px solid $primary_color;
+            background-color: lighten($primary_color, 2.5%);
+            width: 80%;
+
+            img {
+                height: 12.5vh;
+                width: 32.5%;
+                opacity: 0.5;
+                cursor: pointer;
+                transition: opacity .75s;
+            }
+        }
+    }
+}
+
+img.room_active {
+    opacity: 1 !important;
+    transform: scale(1.02);
+}
+
+//_________________________________________ Media Queries
+
+
+// *Tablet  
+@media screen and (max-width:768px) {
+    section.main_container {
+
+        flex-direction: column;
+        height: auto;
+
+        div.room_description {
+            width: 100%;
+            min-height: 22vh;
+        }
+
+        div.room_gallery {
+            width: 100%;
+
+            .gallery_highlight {
+                width: 100%;
+                min-height: 60vh;
+            }
+
+            div.pictures_preview {
+                width: 100%;
+            }
+        }
+
+    }
+
+}
+
+// *Phone  
+@media screen and (max-width:425px) {
+    section.main_container {
+        flex-direction: column;
+        height: auto;
+
+         div.room_description {
+
+            min-height: 15vh;
+
+            h1{
+                font-size:3em ;
+            }
+
+            p{
+                font-size: 1.5em;
+            }
+        }
+        div.room_gallery{
+
+            .gallery_highlight {
+                width: 100%;
+                min-height: auto;
+            }
+            div.pictures_preview{
+                min-height: 50vh;
+                flex-direction: column;
+                align-items: center;
+    
+                img{
+                    height: 20vh;
+                    width: 75%;
+                }
+                
+            }
+        }
+
+    }
+
+}

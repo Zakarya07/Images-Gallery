@@ -1,0 +1,35 @@
+@font-face { font-family: "Elegant"; src: url("../Font/alex-brush/AlexBrush-Regular.ttf"); }
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Elegant"; }
+
+section.main_container { display: flex; height: 100vh; }
+
+section.main_container div.room_description { width: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #f1e2bf; }
+
+section.main_container div.room_description h1 { font-size: 3.75em; }
+
+section.main_container div.room_description p { font-size: 1.75em; text-transform: capitalize; }
+
+section.main_container div.room_gallery { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 50%; }
+
+section.main_container div.room_gallery .gallery_highlight { width: 80%; height: 50%; }
+
+section.main_container div.room_gallery div.pictures_preview { display: flex; justify-content: space-between; border: 5px solid #f1e2bf; background-color: #f3e7c9; width: 80%; }
+
+section.main_container div.room_gallery div.pictures_preview img { height: 12.5vh; width: 32.5%; opacity: 0.5; cursor: pointer; transition: opacity .75s; }
+
+img.room_active { opacity: 1 !important; transform: scale(1.02); }
+
+@media screen and (max-width: 768px) { section.main_container { flex-direction: column; height: auto; }
+  section.main_container div.room_description { width: 100%; min-height: 22vh; }
+  section.main_container div.room_gallery { width: 100%; }
+  section.main_container div.room_gallery .gallery_highlight { width: 100%; min-height: 60vh; }
+  section.main_container div.room_gallery div.pictures_preview { width: 100%; } }
+
+@media screen and (max-width: 425px) { section.main_container { flex-direction: column; height: auto; }
+  section.main_container div.room_description { min-height: 15vh; }
+  section.main_container div.room_description h1 { font-size: 3em; }
+  section.main_container div.room_description p { font-size: 1.5em; }
+  section.main_container div.room_gallery .gallery_highlight { width: 100%; min-height: auto; }
+  section.main_container div.room_gallery div.pictures_preview { min-height: 50vh; flex-direction: column; align-items: center; }
+  section.main_container div.room_gallery div.pictures_preview img { height: 20vh; width: 75%; } }
